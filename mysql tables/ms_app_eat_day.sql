@@ -1,0 +1,58 @@
+-- MySQL dump 10.13  Distrib 5.6.24, for Win32 (x86)
+--
+-- Host: localhost    Database: ms_app
+-- ------------------------------------------------------
+-- Server version	5.7.16-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `eat_day`
+--
+
+DROP TABLE IF EXISTS `eat_day`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `eat_day` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `officerId` varchar(45) DEFAULT NULL,
+  `ProductId` varchar(45) DEFAULT NULL,
+  `price` varchar(45) DEFAULT NULL,
+  `date` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `ProductId_idx` (`ProductId`),
+  KEY `officerId_idx` (`officerId`),
+  CONSTRAINT `ProductId` FOREIGN KEY (`ProductId`) REFERENCES `product` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `officerId` FOREIGN KEY (`officerId`) REFERENCES `officer` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=221 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `eat_day`
+--
+
+LOCK TABLES `eat_day` WRITE;
+/*!40000 ALTER TABLE `eat_day` DISABLE KEYS */;
+INSERT INTO `eat_day` VALUES (197,'1','5','5.00','2020-08-27 20:15:16.021645'),(199,'1','7','3.33','2020-08-27 20:15:16.021645'),(200,'2','7','3.33','2020-08-27 20:15:16.021645'),(201,'3','7','3.33','2020-08-27 20:15:16.021645'),(202,'1','1gh44bWQRZsh5FQMahIdM9Kc1r7','10.00','2020-08-27 21:35:00.000'),(204,'1','5','3.33','2020-08-27 21:35:00.000'),(205,'2','5','3.33','2020-08-27 21:35:00.000'),(206,'3','5','3.33','2020-08-27 21:35:00.000'),(207,'1','7','2.00','2020-09-20 19:26:34.821185'),(208,'2','7','2.00','2020-09-20 19:26:34.821185'),(209,'3','7','2.00','2020-09-20 19:26:34.821185'),(210,'1','1gh44bWQRZsh5FQMahIdM9Kc1r7','8.67','2020-09-20 19:26:34.821185'),(212,'2','1gh44bWQRZsh5FQMahIdM9Kc1r7','8.67','2020-09-20 19:26:34.821185'),(213,'1','3','6.67','2020-09-20 19:26:34.821185'),(214,'3','3','6.67','2020-09-20 19:26:34.821185'),(215,'2','3','6.67','2020-09-20 19:26:34.821185'),(216,'1','1gh44bWQRZsh5FQMahIdM9Kc1r7','1.00','Wednesday, September 23, 2020'),(217,'2','1gh44bWQRZsh5FQMahIdM9Kc1r7','1.00','Wednesday, September 23, 2020'),(218,'2','1gh44bWQRZsh5FQMahIdM9Kc1r7','1.00','Wednesday, September 23, 2020'),(219,'4','1gh44bWQRZsh5FQMahIdM9Kc1r7','1.00','Wednesday, September 23, 2020'),(220,'1','1gh44bWQRZsh5FQMahIdM9Kc1r7','1.00','Wednesday, September 23, 2020');
+/*!40000 ALTER TABLE `eat_day` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2020-10-28 22:09:54
